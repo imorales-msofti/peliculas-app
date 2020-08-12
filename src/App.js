@@ -64,11 +64,12 @@ export default class App extends Component {
                 )
               }
             </div>
-            <Modal isOpen={this.state.modalIsOpen} style={{ content: { top: '10%', left: '25%', right: '25%', bottom: 'auto' } }}>
+            <Modal isOpen={this.state.modalIsOpen} style={{ content: { top: '10%', left: '35%', right: '35%', bottom: 'auto',  height: '500px', overlfow: 'scroll', transform: 'translate(-10%, -10%)'} }}>
               <div>
                 <button onClick={this.closeModal}><i className="fas fa-times"></i></button>
               </div>
               <img src={this.state.pelicula.img_src} alt="" className="img-fluid" />
+              <br/>
               <h2>{this.state.pelicula.title}</h2>
               <br/>
               <h3>Duración</h3>
@@ -93,7 +94,7 @@ export default class App extends Component {
 
   componentDidMount() {
 
-    const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}&language=es-MX&page=1`;
+    const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}&language=es-MX&region=MX`;
     fetch(url)
       .then(request => request.json())
       .then(data => {

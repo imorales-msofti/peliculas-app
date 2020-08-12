@@ -4,10 +4,19 @@ export default class Pelicula extends Component {
 
   render() {
     const img_base_url = process.env.REACT_APP_MOVIE_DB_IMG_BASE_URL;
-    // const img_url = "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg";
-    // http://image.tmdb.org/t/p/w500/3eg0kGC2Xh0vhydJHO37Sp4cmMt.jpg
     const poster_size = "w342";
-    const img_url = `${img_base_url}${poster_size}${this.props.pelicula.poster_path}`;
+    let img_url;
+
+    if(this.props.pelicula.poster_path){
+
+      img_url = `${img_base_url}${poster_size}${this.props.pelicula.poster_path}`;
+    }
+    else{
+      img_url = `${process.env.PUBLIC_URL}/noImagenAvailable.jpg`;
+      
+    }
+
+    console.log(img_url);
 
     return (
       <div className="col-md-6">
