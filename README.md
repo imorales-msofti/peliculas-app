@@ -2,6 +2,11 @@ Este proyecto muestra una lista de peliculas y el detalle de cada una.
 
 Utiliza el API de [themoviedb](https://developers.themoviedb.org/3/getting-started/images)
 
+### Demo
+
+Esta instalado en AWS Amplify [Ver Demo](https://master.dy6bw54u6y2zd.amplifyapp.com/)
+
+
 ### Instalación
 
 `npm install`
