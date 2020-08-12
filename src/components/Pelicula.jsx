@@ -11,9 +11,9 @@ export default class Pelicula extends Component {
 
     return (
       <div className="col-md-6">
-        <div class="img-container">
+        <div className="img-container" onClick={e=> this.props.handleClick(this.props.pelicula.id)}>
           <img src={img_url} alt="" className="img-fluid" />
-          <div class="positioning">
+          <div className="positioning">
             <p className="text-left">{this.props.pelicula.original_title}</p>
             <br/>
             <p className="text-left">{moment(this.props.pelicula.release_date).format("DD-MMM-YYYY")}</p>
