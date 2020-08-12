@@ -28,7 +28,6 @@ export default class App extends Component {
   }
 
   getMovieDetail(peliculaID) {
-    // const peliculaID = 100;
     const url = `https://api.themoviedb.org/3/movie/${peliculaID}?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}&language=es-MX`;
     const img_base_url = process.env.REACT_APP_MOVIE_DB_IMG_BASE_URL;
     const poster_size = "w342";
@@ -64,7 +63,7 @@ export default class App extends Component {
                 )
               }
             </div>
-            <Modal isOpen={this.state.modalIsOpen} style={{ content: { top: '10%', left: '35%', right: '35%', bottom: 'auto',  height: '500px', overlfow: 'scroll', transform: 'translate(-10%, -10%)'} }}>
+            <Modal isOpen={this.state.modalIsOpen} style={{ content: { top: '10%', left: '35%', right: '35%', bottom: 'auto',  height: '600px', overlfow: 'scroll', transform: 'translate(-10%, -10%)'} }}>
               <div>
                 <button onClick={this.closeModal}><i className="fas fa-times"></i></button>
               </div>
@@ -99,10 +98,7 @@ export default class App extends Component {
       .then(request => request.json())
       .then(data => {
         this.setState({ peliculas: data.results });
-        // this.getMovieDetail()
       });
-
-      
   }
 
 }

@@ -7,6 +7,7 @@ export default class Pelicula extends Component {
     const poster_size = "w342";
     let img_url;
 
+    //Valida si existe imagen, en caso que no establece una imagen por Defalut
     if(this.props.pelicula.poster_path){
 
       img_url = `${img_base_url}${poster_size}${this.props.pelicula.poster_path}`;
@@ -15,9 +16,6 @@ export default class Pelicula extends Component {
       img_url = `${process.env.PUBLIC_URL}/noImagenAvailable.jpg`;
       
     }
-
-    console.log(img_url);
-
     return (
       <div className="col-md-6">
         <div className="img-container" onClick={e=> this.props.handleClick(this.props.pelicula.id)}>
